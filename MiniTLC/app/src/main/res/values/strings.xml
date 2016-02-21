@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MiniTLC</string>
+
+    <!-- Screen names -->
+    <string name="splash_screen">Splash Screen</string>
+    <string name="main_screen">Main Screen</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

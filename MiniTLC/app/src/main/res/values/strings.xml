@@ -2,11 +2,17 @@
     <string name="app_name">MiniTLC</string>
 
     <!-- Screen names -->
-    <string name="splash_screen">Splash Screen</string>
     <string name="main_screen">Main Screen</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- Splash screen strings -->
+    <string name="splash_title">Mini TLC</string>
+    <string name="splash_subtitle">App oficial do Mini TLC de Campinas √</string>
 
-    <string name="action_settings">Settings</string>
+    <!-- Navigation drawer strings -->
+    <string name="nav_title">Olá, seja bem-vindo!</string>
+    <string name="nav_sub_title">Versão: 1.0</string>
+
+    <!-- Menu strings -->
+    <string name="action_settings">Configurações</string>
+
 </resources>

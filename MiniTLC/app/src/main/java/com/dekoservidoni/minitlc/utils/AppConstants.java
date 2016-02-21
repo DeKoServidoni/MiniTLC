@@ -7,6 +7,10 @@ package com.dekoservidoni.minitlc.utils;
  */
 public class AppConstants {
 
+    /** Debug constants */
+    public static final String TAG = "MiniTLC";
+    public static final boolean DEBUG_ENABLE = true;
+
     /** Splash screen timeout */
-    public static final int SPLASH_TIMEOUT = 2000;
+    public static final int SPLASH_TIMEOUT = 3000;
 }

@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    /* UI Components */
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    //MARK: Lifecycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

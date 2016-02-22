@@ -49,7 +49,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HoY-zz-6b1"/>
+                    <navigationItem key="navigationItem" id="HoY-zz-6b1">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="IHL-uQ-S3W"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="IHL-uQ-S3W" id="MyA-mU-6yJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bv-Ly-6pJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

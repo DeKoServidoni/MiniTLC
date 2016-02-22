@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FA0406E1C7A991E00F6576E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0406D1C7A991E00F6576E /* SWRevealViewController.m */; };
 		3FC8681B1C7A839F00B861A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8681A1C7A839F00B861A9 /* AppDelegate.swift */; };
 		3FC8681D1C7A839F00B861A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8681C1C7A839F00B861A9 /* ViewController.swift */; };
 		3FC868201C7A839F00B861A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC8681E1C7A839F00B861A9 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FA0406B1C7A991D00F6576E /* MiniTLC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiniTLC-Bridging-Header.h"; sourceTree = "<group>"; };
+		3FA0406C1C7A991E00F6576E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		3FA0406D1C7A991E00F6576E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3FC868171C7A839F00B861A9 /* MiniTLC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTLC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC8681A1C7A839F00B861A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC8681C1C7A839F00B861A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FA0406A1C7A98F900F6576E /* NavigationMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3FA0406C1C7A991E00F6576E /* SWRevealViewController.h */,
+				3FA0406D1C7A991E00F6576E /* SWRevealViewController.m */,
+				3FA0406B1C7A991D00F6576E /* MiniTLC-Bridging-Header.h */,
+			);
+			name = NavigationMenu;
+			sourceTree = "<group>";
+		};
 		3FC8680E1C7A839F00B861A9 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +68,7 @@
 		3FC868191C7A839F00B861A9 /* MiniTLC */ = {
 			isa = PBXGroup;
 			children = (
+				3FA0406A1C7A98F900F6576E /* NavigationMenu */,
 				3FC8681A1C7A839F00B861A9 /* AppDelegate.swift */,
 				3FC8681C1C7A839F00B861A9 /* ViewController.swift */,
 				3FC8681E1C7A839F00B861A9 /* Main.storyboard */,
@@ -138,6 +153,7 @@
 			files = (
 				3FC8681D1C7A839F00B861A9 /* ViewController.swift in Sources */,
 				3FC8681B1C7A839F00B861A9 /* AppDelegate.swift in Sources */,
+				3FA0406E1C7A991E00F6576E /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,10 +264,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MiniTLC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dekoservidoni.MiniTLC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MiniTLC/MiniTLC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -259,10 +278,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MiniTLC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dekoservidoni.MiniTLC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MiniTLC/MiniTLC-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -285,6 +306,7 @@
 				3FC8682B1C7A839F00B861A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

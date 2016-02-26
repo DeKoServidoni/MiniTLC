@@ -1,0 +1,45 @@
+{
+  "period": "CALENDÁRIO - MINI TLC CAMPINAS 2016",
+  "events":[
+    {
+      "title":"2° Reunião",
+      "description":"",
+      "date":"19 de Março ás 09:00 da Manhã."
+    },
+    {
+      "title":"3° Reunião",
+      "description":"",
+      "date":"30 de Abril ás 09:00 da Manhã."
+    },
+    {
+      "title":"4° Reunião",
+      "description":"Convidar as Mães para irem junto",
+      "date":"21 de Maio ás 09:00 da Manhã."
+    },
+    {
+      "title":"5° Reunião",
+      "description":"Horário será definido",
+      "date":"25 de Junho."
+    },
+    {
+      "title":"VIGILIA OFICIAL",
+      "description":"",
+      "date":"02 de Julho ás 18:00 hrs."
+    },
+    {
+      "title":"MISSA DE ENVIO",
+      "description":"Na igreja Santa Rita",
+      "date":"17 de Julho ás 20:00 hrs."
+    },
+    {
+      "title":"9º MINI TLC",
+      "description":"",
+      "date":"22, 23 e 24 de Julho."
+    },
+    {
+      "title":"6° Reunião",
+      "description":"ACOLHIDA DOS NOVOS MINICISTAS",
+      "date":"30 de Julho ás 14:00 hrs."
+    }
+  ]
+}

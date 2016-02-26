@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MiniTLC</string>
+    <string name="app_name">MiniTLC App</string>
 
     <!-- Screen names -->
     <string name="main_screen">Main Screen</string>

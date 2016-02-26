@@ -16,7 +16,7 @@
         android:layout_width="80dip"
         android:layout_height="100dip"
         android:contentDescription="@null"
-        android:src="@drawable/maria_red"
+        android:src="@drawable/mask_haroldinho"
         android:scaleType="centerInside"/>
 
     <TextView

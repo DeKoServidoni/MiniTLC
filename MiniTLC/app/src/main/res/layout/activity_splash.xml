@@ -4,38 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/colorPrimary">
+    android:background="@android:color/white">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
         android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@null"
-            android:src="@drawable/maria_red"
-            android:scaleType="centerInside"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dip"
-            android:gravity="center"
-            android:text="@string/splash_title"
-            android:textColor="@color/white"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/splash_subtitle"/>
-
-    </LinearLayout>
+        android:src="@drawable/splash_logo"
+        android:scaleType="fitXY"/>
 
 </RelativeLayout>

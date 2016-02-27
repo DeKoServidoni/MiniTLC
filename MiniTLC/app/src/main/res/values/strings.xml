@@ -14,5 +14,7 @@
 
     <!-- Menu strings -->
     <string name="action_settings">Configurações</string>
+    <string name="nav_photo">Montar foto</string>
+    <string name="nav_gallery">Ver fotos</string>
 
 </resources>

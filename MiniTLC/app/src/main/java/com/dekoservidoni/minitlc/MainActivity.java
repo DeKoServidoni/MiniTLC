@@ -3,6 +3,7 @@ package com.dekoservidoni.minitlc;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,9 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.dekoservidoni.minitlc.adapters.MiniListAdapter;
+import com.dekoservidoni.minitlc.dialogs.AboutDialog;
 import com.dekoservidoni.minitlc.managers.MiniDatabaseManager;
+import com.dekoservidoni.minitlc.utils.AppConstants;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,6 +26,7 @@ import butterknife.ButterKnife;
  *
  * Created by DeKoServidoni on 2/21/16.
  */
+@SuppressWarnings("deprecation")
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     /** UI Components */
@@ -83,19 +87,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
+        Intent intent;
+
         switch(item.getItemId()) {
+
+            case R.id.nav_calendar:
+                //TODO
+                break;
+
+            case R.id.nav_gallery:
+                //TODO
+                break;
 
             case R.id.nav_camera:
                 Intent camera = new Intent(this, SelectPictureActivity.class);
                 startActivity(camera);
                 break;
 
-//            case R.id.nav_gallery:
-//                //TODO
-//                break;
+            case R.id.nav_talk_with_us:
+                intent = new Intent(android.content.Intent.ACTION_SEND);
+                intent.setType(AppConstants.EMAIL_TYPE);
+                intent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{AppConstants.EMAIL_COORDINATION});
+                startActivity(Intent.createChooser(intent, AppConstants.EMAIL_CHOOSER_TITLE));
+                break;
+
+            case R.id.nav_about:
+                DialogFragment dialog = AboutDialog.newInstance();
+                dialog.show(getSupportFragmentManager(), AboutDialog.class.getSimpleName());
+                break;
+
+
         }
 
         mDrawerLayout.closeDrawer(Gravity.LEFT);
+        item.setChecked(false);
 
         return true;
     }

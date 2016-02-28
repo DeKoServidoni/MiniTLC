@@ -1,14 +1,20 @@
 <resources>
     <string name="app_name">MiniTLC App</string>
 
-    <!-- Navigation drawer strings -->
+    <!-- Navigation header strings -->
     <string name="nav_title">Olá, seja bem-vindo!</string>
-    <string name="nav_sub_title">Versão: 1.0</string>
+    <string name="nav_sub_title">Versão: 1.1</string>
 
-    <!-- Menu strings -->
-    <string name="action_settings">Configurações</string>
+    <!-- Navigation menu strings -->
+    <string name="nav_calendar">Calendário</string>
+    <string name="nav_gallery">Galeria</string>
     <string name="nav_photo">Tirar foto!</string>
-    <string name="nav_gallery">Ver fotos</string>
+    <string name="nav_about">Sobre</string>
+    <string name="nav_talk_with_us">Fale conoso!</string>
+    <string name="nav_check_in">[TODO] Marcar presença</string>
+
+    <!-- About me dialog strings -->
+    <string name="content_text">App oficial do Mini TLC de Campinas √\n\n Dúvidas, sugestões ou reclamações, envie e-mail para:\n mini@tlccampinas.com.br\n\nBy DeKo Servidoni</string>
 
     <!-- Camera Editor functionality strings -->
     <string name="save_photo_success">Foto salva com sucesso!</string>

@@ -47,8 +47,23 @@ public class AppConstants {
     public static final String PICTURE_NAME = "MiniTLC Photo";
     public static final String PICTURE_MIME_TYPE = "image/jpeg";
 
-    //TODO: NEED TO REMOVE IN NEWER VERSIONS!
+    /** Talk with us constants */
+    public static final String EMAIL_TYPE = "plain/text";
+    public static final String EMAIL_COORDINATION = "mini@tlccampinas.com.br";
+    public static final String EMAIL_CHOOSER_TITLE = "Enviar e-mail...";
 
+
+
+
+
+
+
+
+
+
+
+
+    //TODO: NEED TO REMOVE IN NEWER VERSIONS!
     /** JSON Tags */
     public static final String TAG_EVENTS = "events";
     public static final String TAG_TITLE = "title";

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_marginBottom="10dip"
+        android:contentDescription="@null"
+        android:src="@drawable/mask_minitlc"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dip"
+        android:contentDescription="@null"
+        android:src="@drawable/mask_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="@string/content_text"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/about_dialog_ok"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_margin="20dip"
+        android:background="@drawable/select_picture_selector"
+        android:textColor="@android:color/white"
+        android:text="@android:string/ok"/>
+
+</LinearLayout>

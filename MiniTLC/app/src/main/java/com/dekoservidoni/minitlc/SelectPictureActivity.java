@@ -95,12 +95,6 @@ public class SelectPictureActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == AppConstants.REQUEST_OPEN_EDITOR
-                && resultCode == AppConstants.RESPONSE_FROM_EDITOR) {
-            this.finish();
-
-        } else {
-
             switch (mChooseType) {
 
                 case CHOOSE_CAMERA:
@@ -114,7 +108,6 @@ public class SelectPictureActivity extends AppCompatActivity {
                 default:
                     // do nothing
             }
-        }
     }
 
     /**
@@ -221,6 +214,6 @@ public class SelectPictureActivity extends AppCompatActivity {
     private void sendIntent(String path) {
         Intent editorScreen = new Intent(this, EditPictureActivity.class);
         editorScreen.putExtra(AppConstants.EXTRA_PICTURE_PATH, path);
-        startActivityForResult(editorScreen, AppConstants.REQUEST_OPEN_EDITOR);
+        startActivity(editorScreen);
     }
 }

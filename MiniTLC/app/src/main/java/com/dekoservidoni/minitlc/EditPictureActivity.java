@@ -28,11 +28,7 @@ public class EditPictureActivity extends AppCompatActivity {
     @Bind(R.id.camera_add_alegria) FloatingActionButton mMaskBallon;
     @Bind(R.id.camera_add_haroldinho) FloatingActionButton mMaskHaroldinho;
     @Bind(R.id.camera_add_minitlc) FloatingActionButton mMaskMiniTLC;
-    @Bind(R.id.camera_cancel) FloatingActionButton mCancel;
     @Bind(R.id.camera_save) FloatingActionButton mSavePicture;
-
-    /** Picture path */
-    private String mPath = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,7 +41,6 @@ public class EditPictureActivity extends AppCompatActivity {
         mMaskHaroldinho.setOnClickListener(mButtonsListener);
         mMaskMiniTLC.setOnClickListener(mButtonsListener);
         mSavePicture.setOnClickListener(mCameraButtonsListener);
-        mCancel.setOnClickListener(mCameraButtonsListener);
 
         setupUI();
     }
@@ -60,10 +55,10 @@ public class EditPictureActivity extends AppCompatActivity {
 
             Bundle bundle = callerIntent.getExtras();
             if(bundle != null) {
-                mPath = bundle.getString(AppConstants.EXTRA_PICTURE_PATH, "");
+                String path = bundle.getString(AppConstants.EXTRA_PICTURE_PATH, "");
 
-                mCameraPreview.setBackground(Drawable.createFromPath(mPath));
-                mCameraPreview.setPicturePath(mPath.substring(0, mPath.lastIndexOf('/') + 1));
+                mCameraPreview.setBackground(Drawable.createFromPath(path));
+                mCameraPreview.setPicturePath(path.substring(0, path.lastIndexOf('/') + 1));
                 mCameraPreview.setVisibility(View.VISIBLE);
             }
         }
@@ -82,7 +77,6 @@ public class EditPictureActivity extends AppCompatActivity {
                     int stringId;
 
                     if(mCameraPreview.savePicture()) {
-                        setResult(AppConstants.RESPONSE_FROM_EDITOR);
                         stringId = R.string.save_photo_success;
                         EditPictureActivity.this.finish();
                     } else {
@@ -90,12 +84,6 @@ public class EditPictureActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText(EditPictureActivity.this, stringId, Toast.LENGTH_LONG).show();
-                    break;
-
-                case R.id.camera_cancel:
-                    if(mPath != null) {
-                        mCameraPreview.setBackground(Drawable.createFromPath(mPath));
-                    }
                     break;
             }
         }

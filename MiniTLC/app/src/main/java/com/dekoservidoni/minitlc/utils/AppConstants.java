@@ -37,10 +37,6 @@ public class AppConstants {
     /** Activity request codes */
     public static final int REQUEST_OPEN_GALLERY = 1;
     public static final int REQUEST_OPEN_CAMERA = 1;
-    public static final int REQUEST_OPEN_EDITOR = 10;
-
-    /** Activity response codes */
-    public static final int RESPONSE_FROM_EDITOR = 11;
 
     /** Camera preview constants */
     public static final String PICTURE_EXTENSION = ".jpeg";

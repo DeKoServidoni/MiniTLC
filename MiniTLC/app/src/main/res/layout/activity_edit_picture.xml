@@ -44,17 +44,6 @@
         android:visibility="visible"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/camera_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_delete"
-        android:visibility="visible"/>
-
-    <android.support.design.widget.FloatingActionButton
         android:id="@+id/camera_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

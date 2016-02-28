@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/event_list_row_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip">
+
+        <ImageView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:contentDescription="@null"
+            android:layout_marginLeft="10dip"
+            android:layout_marginStart="10dip"
+            android:layout_marginEnd="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="5dip"
+            android:src="@drawable/ic_insert_comment_black_36dp"/>
+
+        <TextView
+            android:id="@+id/list_row_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorPrimaryDark"
+            android:text=""/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/event_list_row_2"
+        android:layout_below="@id/event_list_row_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginStart="10dip">
+
+        <ImageView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:contentDescription="@null"
+            android:layout_marginLeft="10dip"
+            android:layout_marginStart="10dip"
+            android:layout_marginEnd="10dip"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/ic_query_builder_black_36dp"/>
+
+        <TextView
+            android:id="@+id/list_row_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:text=""/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/list_row_description"
+        android:layout_below="@id/event_list_row_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dip"
+        android:layout_marginLeft="45dip"
+        android:layout_marginBottom="10dip"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:gravity="center_vertical"
+        android:text=""/>
+
+</RelativeLayout>

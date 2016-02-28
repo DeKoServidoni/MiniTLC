@@ -79,7 +79,7 @@ public class MiniListAdapter extends BaseAdapter {
         ViewHolder holder;
 
         if(view == null) {
-            view = mInflater.inflate(R.layout.list_row, null);
+            view = mInflater.inflate(R.layout.event_list_row, null);
 
             holder = new ViewHolder();
             holder.title = (TextView) view.findViewById(R.id.list_row_title);
@@ -94,8 +94,11 @@ public class MiniListAdapter extends BaseAdapter {
         MiniEvent event = mContent.get(position);
 
         holder.title.setText(event.getTitle());
-        holder.description.setText(event.getDescription());
         holder.date.setText(event.getDate());
+
+        int visibility = event.getDescription().isEmpty() ? View.INVISIBLE : View.VISIBLE;
+        holder.description.setText(event.getDescription());
+        holder.description.setVisibility(visibility);
 
         return view;
     }

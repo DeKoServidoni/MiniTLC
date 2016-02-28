@@ -86,13 +86,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch(item.getItemId()) {
 
             case R.id.nav_camera:
-                Intent camera = new Intent(this, CameraActivity.class);
+                Intent camera = new Intent(this, SelectPictureActivity.class);
                 startActivity(camera);
                 break;
 
-            case R.id.nav_gallery:
-                //TODO
-                break;
+//            case R.id.nav_gallery:
+//                //TODO
+//                break;
         }
 
         mDrawerLayout.closeDrawer(Gravity.LEFT);

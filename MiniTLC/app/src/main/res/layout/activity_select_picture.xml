@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/select_camera"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.5"
+        android:layout_marginTop="40dip"
+        android:layout_marginStart="50dip"
+        android:layout_marginEnd="50dip"
+        android:layout_marginLeft="50dip"
+        android:layout_marginRight="50dip"
+        android:layout_marginBottom="20dip"
+        android:contentDescription="@null"
+        android:clickable="true"
+        android:background="@drawable/select_picture_selector"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_photo_camera_white_48dp"/>
+
+    <ImageView
+        android:id="@+id/select_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.5"
+        android:layout_marginTop="20dip"
+        android:layout_marginStart="50dip"
+        android:layout_marginEnd="50dip"
+        android:layout_marginLeft="50dip"
+        android:layout_marginRight="50dip"
+        android:layout_marginBottom="40dip"
+        android:contentDescription="@null"
+        android:clickable="true"
+        android:background="@drawable/select_picture_selector"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_photo_library_white_48dp"/>
+
+</LinearLayout>

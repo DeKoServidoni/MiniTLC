@@ -31,6 +31,24 @@ public class AppConstants {
             + COLUMN_DESCRIPTION + " text, "
             + COLUMN_DATE + " text);";
 
+    /** Bundle tags */
+    public static final String EXTRA_PICTURE_PATH = "extra_picture_path";
+
+    /** Activity request codes */
+    public static final int REQUEST_OPEN_GALLERY = 1;
+    public static final int REQUEST_OPEN_CAMERA = 1;
+    public static final int REQUEST_OPEN_EDITOR = 10;
+
+    /** Activity response codes */
+    public static final int RESPONSE_FROM_EDITOR = 11;
+
+    /** Camera preview constants */
+    public static final String PICTURE_EXTENSION = ".jpeg";
+    public static final String PICTURE_NAME = "MiniTLC Photo";
+    public static final String PICTURE_MIME_TYPE = "image/jpeg";
+
+    //TODO: NEED TO REMOVE IN NEWER VERSIONS!
+
     /** JSON Tags */
     public static final String TAG_EVENTS = "events";
     public static final String TAG_TITLE = "title";

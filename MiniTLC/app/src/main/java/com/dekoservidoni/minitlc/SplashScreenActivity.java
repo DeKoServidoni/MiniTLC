@@ -33,9 +33,9 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        //TODO: Initially only. This will be different in the other versions!
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         boolean firstTime = prefs.getBoolean(AppConstants.SHARED_PREFS_FIRST_EXECUTION, true);
-
         if(firstTime) {
             MiniLog.d("Open SplashScreen, and insert events into database");
             MiniDatabaseManager manager = new MiniDatabaseManager(this);
@@ -47,11 +47,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-
-
                 Intent mainActivity = new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(mainActivity);
-
                 finish();
             }
         }, AppConstants.SPLASH_TIMEOUT);
@@ -103,7 +100,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         }
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        prefs.edit().putBoolean(AppConstants.SHARED_PREFS_FIRST_EXECUTION, false).apply();;
+        prefs.edit().putBoolean(AppConstants.SHARED_PREFS_FIRST_EXECUTION, false).apply();
 
         return events;
     }

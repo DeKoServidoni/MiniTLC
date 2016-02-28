@@ -1,20 +1,17 @@
 <resources>
     <string name="app_name">MiniTLC App</string>
 
-    <!-- Screen names -->
-    <string name="main_screen">Main Screen</string>
-
-    <!-- Splash screen strings -->
-    <string name="splash_title">Mini TLC</string>
-    <string name="splash_subtitle">App oficial do Mini TLC de Campinas √</string>
-
     <!-- Navigation drawer strings -->
     <string name="nav_title">Olá, seja bem-vindo!</string>
     <string name="nav_sub_title">Versão: 1.0</string>
 
     <!-- Menu strings -->
     <string name="action_settings">Configurações</string>
-    <string name="nav_photo">Montar foto</string>
+    <string name="nav_photo">Tirar foto!</string>
     <string name="nav_gallery">Ver fotos</string>
+
+    <!-- Camera Editor functionality strings -->
+    <string name="save_photo_success">Foto salva com sucesso!</string>
+    <string name="save_photo_error">Não foi possível salvar a foto.</string>
 
 </resources>

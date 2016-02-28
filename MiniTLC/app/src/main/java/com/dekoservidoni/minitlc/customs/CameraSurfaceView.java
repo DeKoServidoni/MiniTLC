@@ -11,6 +11,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
+import com.dekoservidoni.minitlc.utils.AppConstants;
 import com.dekoservidoni.minitlc.utils.MiniLog;
 
 import java.io.File;
@@ -118,7 +119,7 @@ public class CameraSurfaceView extends SurfaceView implements OnTouchListener {
 
             StringBuilder builder = new StringBuilder(mPicturePath);
             builder.append(Calendar.getInstance().getTimeInMillis());
-            builder.append(".jpeg");
+            builder.append(AppConstants.PICTURE_EXTENSION);
 
             Bitmap bitmap = Bitmap.createBitmap( this.getWidth(), this.getHeight(), Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(bitmap);
@@ -128,7 +129,7 @@ public class CameraSurfaceView extends SurfaceView implements OnTouchListener {
             result = addImageToGallery(builder.toString());
 
         } catch (FileNotFoundException e) {
-            MiniLog.e("Exception: " + e.getLocalizedMessage());
+            MiniLog.e("" + e.getLocalizedMessage());
         }
 
         return result;
@@ -144,10 +145,10 @@ public class CameraSurfaceView extends SurfaceView implements OnTouchListener {
     private boolean addImageToGallery(String path) {
 
         ContentValues values = new ContentValues();
-        values.put(MediaStore.Images.Media.TITLE, "MiniTLC Avatar");
-        values.put(MediaStore.Images.Media.DESCRIPTION, "MiniTLC Avatar!");
+        values.put(MediaStore.Images.Media.TITLE, AppConstants.PICTURE_NAME);
+        values.put(MediaStore.Images.Media.DESCRIPTION, AppConstants.PICTURE_NAME);
         values.put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis());
-        values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+        values.put(MediaStore.Images.Media.MIME_TYPE, AppConstants.PICTURE_MIME_TYPE);
         values.put(MediaStore.MediaColumns.DATA, path);
 
         return (getContext().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values) != null);

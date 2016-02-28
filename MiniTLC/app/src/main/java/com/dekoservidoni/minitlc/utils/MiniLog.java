@@ -32,28 +32,4 @@ public class MiniLog {
             Log.e(AppConstants.TAG, message);
         }
     }
-
-    /**
-     * Show the info log
-     *
-     * @param message
-     *          log message
-     */
-    public static void i(String message) {
-        if(AppConstants.DEBUG_ENABLE) {
-            Log.i(AppConstants.TAG, message);
-        }
-    }
-
-    /**
-     * Show the warning log
-     *
-     * @param message
-     *          log message
-     */
-    public static void w(String message) {
-        if(AppConstants.DEBUG_ENABLE) {
-            Log.w(AppConstants.TAG, message);
-        }
-    }
 }

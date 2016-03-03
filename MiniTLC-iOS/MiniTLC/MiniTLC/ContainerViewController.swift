@@ -22,7 +22,7 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate {
     
     // MARK: Class attributes
     
-    let centerPanelExpandedOffset: CGFloat = 100
+    let centerPanelExpandedOffset: CGFloat = 70
     
     var centerNavigationController: UINavigationController!
     var centerViewController: CenterViewController!
@@ -44,6 +44,11 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate {
         centerViewController.delegate = self
         
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
+        centerNavigationController.navigationBar.barTintColor = UIColor(hex: 0xF44336)
+        centerNavigationController.navigationBar.backgroundColor = UIColor(hex: 0xF44336)
+        centerNavigationController.navigationBar.tintColor = UIColor(hex: 0xFFFFFF)
+        centerNavigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
         view.addSubview(centerNavigationController.view)
         addChildViewController(centerNavigationController)
 
@@ -108,6 +113,20 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate {
             self.centerNavigationController.view.frame.origin.x = targetPosition
         }, completion: completion)
     }
+}
+
+/* Extension used to enable to enter colors with HEXA values */
+extension UIColor {
+    
+    convenience init(hex: Int) {
+        let components = (
+            R: CGFloat((hex >> 16) & 0xff) / 255,
+            G: CGFloat((hex >> 08) & 0xff) / 255,
+            B: CGFloat((hex >> 00) & 0xff) / 255
+        )
+        self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
+    }
+    
 }
 
 /* Extension used to add a couple of functions for the StoryBoard representing class */

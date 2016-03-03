@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Container View Controller-->
@@ -21,6 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="519" y="477"/>
         </scene>
         <!--Side Panel View Controller-->
         <scene sceneID="7nW-4d-oC8">
@@ -33,14 +35,53 @@
                     <view key="view" contentMode="scaleToFill" id="lbU-dC-p5S">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRw-Lh-Fq6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="183"/>
+                                <connections>
+                                    <segue destination="DQ9-BW-Sb9" kind="embed" id="IEb-gC-gwQ"/>
+                                </connections>
+                            </containerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JKo-SI-iZH">
+                                <rect key="frame" x="0.0" y="185" width="600" height="415"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="415" id="2G9-ph-irD"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="a3l-8W-lRV">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a3l-8W-lRV" id="lED-YF-C83">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FIv-ia-aTu" id="WF8-KV-RRE"/>
+                                    <outlet property="delegate" destination="FIv-ia-aTu" id="oQ5-ZC-JxT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xRw-Lh-Fq6" firstAttribute="leading" secondItem="JKo-SI-iZH" secondAttribute="leading" id="80J-Pe-zWv"/>
+                            <constraint firstItem="xRw-Lh-Fq6" firstAttribute="leading" secondItem="lbU-dC-p5S" secondAttribute="leading" id="9ud-dv-5uE"/>
+                            <constraint firstItem="JKo-SI-iZH" firstAttribute="top" secondItem="xRw-Lh-Fq6" secondAttribute="bottom" constant="2" id="GxC-0h-Iuz"/>
+                            <constraint firstAttribute="trailing" secondItem="xRw-Lh-Fq6" secondAttribute="trailing" id="ncI-8L-W6i"/>
+                            <constraint firstItem="JKo-SI-iZH" firstAttribute="bottom" secondItem="lFS-bL-u2u" secondAttribute="top" id="tNo-jT-5CQ"/>
+                            <constraint firstItem="xRw-Lh-Fq6" firstAttribute="trailing" secondItem="JKo-SI-iZH" secondAttribute="trailing" id="yDZ-vt-77i"/>
+                            <constraint firstItem="xRw-Lh-Fq6" firstAttribute="top" secondItem="lbU-dC-p5S" secondAttribute="top" id="zqK-If-1XH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPo-wu-Bab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213" y="-195"/>
+            <point key="canvasLocation" x="1160" y="-186"/>
         </scene>
-        <!--Title-->
+        <!--MiniTLC App-->
         <scene sceneID="jOx-nZ-5TY">
             <objects>
                 <viewController storyboardIdentifier="CenterViewController" id="ZOT-SF-T9H" customClass="CenterViewController" customModule="MiniTLC" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,10 +92,10 @@
                     <view key="view" contentMode="scaleToFill" id="hTe-rl-3V9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="CWM-Jw-sYt">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="aLy-DZ-46W">
+                    <navigationItem key="navigationItem" title="MiniTLC App" id="CWM-Jw-sYt">
+                        <barButtonItem key="leftBarButtonItem" image="icon_navigation_menu" id="aLy-DZ-46W">
                             <connections>
                                 <action selector="menuTapped:" destination="ZOT-SF-T9H" id="t1f-r8-F6x"/>
                             </connections>
@@ -64,7 +105,78 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jk9-aF-91b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213" y="474"/>
+            <point key="canvasLocation" x="1160" y="477"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kDs-8C-T0t">
+            <objects>
+                <viewController id="DQ9-BW-Sb9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mt4-dC-vSP"/>
+                        <viewControllerLayoutGuide type="bottom" id="97O-00-WMh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rhJ-lY-iQi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="183"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mini_white" translatesAutoresizingMaskIntoConstraints="NO" id="Hf7-4Q-qIx">
+                                <rect key="frame" x="56" y="9" width="200" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask_haroldinho" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-39-JKj">
+                                <rect key="frame" x="32" y="102" width="72" height="81"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="LQF-0J-zgZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, Seja bem-vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdT-f5-0vW">
+                                <rect key="frame" x="117" y="132" width="167" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fjY-al-gZA"/>
+                                    <constraint firstAttribute="width" constant="167" id="kbx-AM-fJH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_campinas_white" translatesAutoresizingMaskIntoConstraints="NO" id="jK6-4G-odo">
+                                <rect key="frame" x="98" y="68" width="117" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="TER-WZ-PFj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="ru5-39-JKj" firstAttribute="centerY" secondItem="UdT-f5-0vW" secondAttribute="centerY" id="1KZ-94-Hyb"/>
+                            <constraint firstAttribute="bottom" secondItem="ru5-39-JKj" secondAttribute="bottom" id="7Vo-au-mBa"/>
+                            <constraint firstItem="jK6-4G-odo" firstAttribute="top" secondItem="rhJ-lY-iQi" secondAttribute="topMargin" constant="68" id="7uc-am-A9L"/>
+                            <constraint firstItem="ru5-39-JKj" firstAttribute="top" secondItem="jK6-4G-odo" secondAttribute="bottom" constant="8" symbolic="YES" id="L1x-v6-XJE"/>
+                            <constraint firstItem="Hf7-4Q-qIx" firstAttribute="leading" secondItem="rhJ-lY-iQi" secondAttribute="leadingMargin" constant="36" id="NWQ-EY-sdE"/>
+                            <constraint firstItem="Hf7-4Q-qIx" firstAttribute="top" secondItem="rhJ-lY-iQi" secondAttribute="topMargin" constant="9" id="aZT-Ot-s8D"/>
+                            <constraint firstItem="UdT-f5-0vW" firstAttribute="leading" secondItem="ru5-39-JKj" secondAttribute="trailing" constant="13" id="aa8-KN-FZ0"/>
+                            <constraint firstItem="UdT-f5-0vW" firstAttribute="top" secondItem="jK6-4G-odo" secondAttribute="bottom" constant="38" id="bTS-f7-IHp"/>
+                            <constraint firstItem="ru5-39-JKj" firstAttribute="top" secondItem="Hf7-4Q-qIx" secondAttribute="bottom" constant="28" id="eZg-dp-aBh"/>
+                            <constraint firstItem="jK6-4G-odo" firstAttribute="leading" secondItem="rhJ-lY-iQi" secondAttribute="leadingMargin" constant="78" id="fMf-cI-Amx"/>
+                            <constraint firstItem="Hf7-4Q-qIx" firstAttribute="centerX" secondItem="jK6-4G-odo" secondAttribute="centerX" id="lSr-Kq-pPC"/>
+                            <constraint firstItem="ru5-39-JKj" firstAttribute="leading" secondItem="rhJ-lY-iQi" secondAttribute="leadingMargin" constant="12" id="oPc-aD-hlb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQL-O7-DeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872" y="-403.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_navigation_menu" width="24" height="24"/>
+        <image name="logo_campinas_white" width="1626" height="496"/>
+        <image name="logo_mini_white" width="1806" height="642"/>
+        <image name="mask_haroldinho" width="338" height="384"/>
+    </resources>
 </document>

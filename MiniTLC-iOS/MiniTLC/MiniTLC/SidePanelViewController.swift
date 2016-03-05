@@ -11,23 +11,47 @@ import UIKit
 
 class SidePanelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: Class attributes
+    var menu: [String] = ["Tirar foto!","Fale conosco!", "Sobre"]
+    var icon: [String] = ["icon_camera", "icon_talk_with_us", "icon_about"]
+    
+    let NUMBER_OF_SECTIONS = 2
+    
     // MARK: Table view delegate functions
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return (section == 0) ? 1 : 2
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return (section == 1) ? "TESTE" : ""
+    }
+    
+    //func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //
+    //}
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return NUMBER_OF_SECTIONS
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-//        let cast = fetchedCastsResultsController.objectAtIndexPath(indexPath) as! Cast
-//        
-//        let cell = tableView.dequeueReusableCellWithIdentifier("CastCustomCellId") as! CastCell
-//        
-//        cell.title.text = cast.title
-//        cell.subtitle.text = cast.subtitle
-//        cell.date.setFormattedDate(cast.date)
+        let identifier = "MenuItemIdentifier"
         
-        return UITableViewCell()
+        var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? SlideMenuCell
+        
+        if cell == nil {
+            let array = NSBundle.mainBundle().loadNibNamed("SlideMenuCell", owner: self, options: nil)
+            cell = array[0] as? SlideMenuCell
+        }
+        
+        let index = (indexPath.section == 1) ? indexPath.row + 1 : indexPath.row
+
+        cell!.icon.image = UIImage(named: icon[index])
+        cell!.label.text = menu[index]
+        
+        return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

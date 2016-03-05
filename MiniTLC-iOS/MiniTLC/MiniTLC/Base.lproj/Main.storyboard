@@ -38,6 +38,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRw-Lh-Fq6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="183"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="DQ9-BW-Sb9" kind="embed" id="IEb-gC-gwQ"/>
                                 </connections>
@@ -49,16 +50,6 @@
                                     <constraint firstAttribute="height" constant="415" id="2G9-ph-irD"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="a3l-8W-lRV">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a3l-8W-lRV" id="lED-YF-C83">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="FIv-ia-aTu" id="WF8-KV-RRE"/>
                                     <outlet property="delegate" destination="FIv-ia-aTu" id="oQ5-ZC-JxT"/>

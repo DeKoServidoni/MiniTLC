@@ -38,6 +38,7 @@
                     <constraint firstItem="6Pc-jc-vVY" firstAttribute="leading" secondItem="ZkP-hu-lGF" secondAttribute="trailing" constant="21" id="vBY-7n-0XR"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="icon" destination="ZkP-hu-lGF" id="tHk-Ks-uXe"/>
                 <outlet property="label" destination="6Pc-jc-vVY" id="z75-tt-MvX"/>

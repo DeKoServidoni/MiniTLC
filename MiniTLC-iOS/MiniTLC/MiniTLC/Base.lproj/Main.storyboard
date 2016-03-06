@@ -43,9 +43,9 @@
                                     <segue destination="DQ9-BW-Sb9" kind="embed" id="IEb-gC-gwQ"/>
                                 </connections>
                             </containerView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JKo-SI-iZH">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JKo-SI-iZH">
                                 <rect key="frame" x="0.0" y="185" width="600" height="415"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="415" id="2G9-ph-irD"/>
                                 </constraints>
@@ -56,7 +56,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xRw-Lh-Fq6" firstAttribute="leading" secondItem="JKo-SI-iZH" secondAttribute="leading" id="80J-Pe-zWv"/>
                             <constraint firstItem="xRw-Lh-Fq6" firstAttribute="leading" secondItem="lbU-dC-p5S" secondAttribute="leading" id="9ud-dv-5uE"/>

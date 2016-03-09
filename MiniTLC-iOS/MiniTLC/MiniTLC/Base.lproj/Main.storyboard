@@ -83,7 +83,21 @@
                     <view key="view" contentMode="scaleToFill" id="hTe-rl-3V9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87J-se-DVT">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <connections>
+                                    <segue destination="myn-nd-wXf" kind="embed" id="NBr-3i-SFj"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="87J-se-DVT" firstAttribute="leading" secondItem="hTe-rl-3V9" secondAttribute="leading" id="JDx-51-bys"/>
+                            <constraint firstItem="87J-se-DVT" firstAttribute="top" secondItem="Cyx-kB-I0Q" secondAttribute="bottom" id="azh-XC-7nQ"/>
+                            <constraint firstAttribute="trailing" secondItem="87J-se-DVT" secondAttribute="trailing" id="hWN-qx-xNy"/>
+                            <constraint firstItem="87J-se-DVT" firstAttribute="bottom" secondItem="WUH-Yn-SxQ" secondAttribute="top" id="lfb-G6-hl7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MiniTLC App" id="CWM-Jw-sYt">
                         <barButtonItem key="leftBarButtonItem" image="icon_navigation_menu" id="aLy-DZ-46W">
@@ -93,10 +107,61 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="containerView" destination="87J-se-DVT" id="iHL-Wc-q70"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jk9-aF-91b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1160" y="477"/>
+        </scene>
+        <!--Picture Chooser View Controller-->
+        <scene sceneID="YZQ-HD-Jdk">
+            <objects>
+                <viewController storyboardIdentifier="PictureChooserViewController" id="APm-O8-ZC8" customClass="PictureChooserViewController" customModule="MiniTLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bel-Cj-7z0"/>
+                        <viewControllerLayoutGuide type="bottom" id="dkl-8b-waz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GbA-8Z-HpW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-8a-PJS" userLabel="button library">
+                                <rect key="frame" x="121" y="326" width="358" height="237"/>
+                                <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="icon_library_white"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fls-31-DZC" userLabel="button camera">
+                                <rect key="frame" x="121" y="55" width="358" height="237"/>
+                                <color key="backgroundColor" red="0.82745098039999998" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="icon_camera_white"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.16862745098039217" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5n-dM-hLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872" y="-849"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Oeh-sZ-Uzx">
+            <objects>
+                <tableViewController storyboardIdentifier="HomeViewController" id="DPk-zD-9MS" customClass="HomeViewController" customModule="MiniTLC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vnh-GN-cLZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="DPk-zD-9MS" id="a6z-f6-qEL"/>
+                            <outlet property="delegate" destination="DPk-zD-9MS" id="Fvu-SY-YgI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Z7-VH-qFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2567" y="-849"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kDs-8C-T0t">
@@ -163,8 +228,24 @@
             </objects>
             <point key="canvasLocation" x="1872" y="-403.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HCg-D1-T6p">
+            <objects>
+                <viewController id="myn-nd-wXf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j0c-tn-C7u">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVl-NX-BZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="477"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="icon_camera_white" width="48" height="48"/>
+        <image name="icon_library_white" width="48" height="48"/>
         <image name="icon_navigation_menu" width="24" height="24"/>
         <image name="logo_campinas_white" width="1626" height="496"/>
         <image name="logo_mini_white" width="1806" height="642"/>

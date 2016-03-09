@@ -9,31 +9,55 @@
 import Foundation
 import UIKit
 
+protocol SidePanelViewControllerDelegate {
+    func openViewController(controller: UIViewController?)
+}
+
 class SidePanelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Class attributes
     
-    var menu: [String] = ["Tirar foto!","Fale conosco!", "Sobre"]
-    var icon: [String] = ["icon_camera", "icon_talk_with_us", "icon_about"]
+    var menuSection0: [String] = ["Início"]
+    var menuSection1: [String] = ["Tirar foto!"]
+    var menuSection2: [String] = ["Fale conosco!", "Sobre"]
+    
+    var iconSection0: [String] = ["icon_home"]
+    var iconSection1: [String] = ["icon_camera"]
+    var iconSection2: [String] = ["icon_talk_with_us", "icon_about"]
+    
+    var delegate: SidePanelViewControllerDelegate?
+    
+    var loadedStoryboard: UIStoryboard?
     
     // MARK: Class constants
     
-    let NUMBER_OF_SECTIONS = 2
+    let NUMBER_OF_SECTIONS = 3
     
-    let SECTION_1_HIGHT: CGFloat = 0
-    let SECTION_2_HIGHT: CGFloat = 2
+    // MARK: Lifecycle functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loadedStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    }
+
     
     // MARK: Table view delegate functions
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let quantitySection1 = menu.count - 2
-        let quantitySection2 = menu.count - quantitySection1
+        var quantity = menuSection0.count
         
-        return (section == 0) ? quantitySection1 : quantitySection2
+        if section == 1 {
+            quantity = menuSection1.count
+        } else if section == 2 {
+            quantity = menuSection2.count
+        }
+        
+        return quantity
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return (section == 0) ? SECTION_1_HIGHT : SECTION_2_HIGHT
+        return (section == 0) ? 0 : 2
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -49,43 +73,53 @@ class SidePanelViewController: UIViewController, UITableViewDelegate, UITableVie
             cell = array[0] as? SlideMenuCell
         }
         
-        let index = (indexPath.section == 1) ? indexPath.row + 1 : indexPath.row
+        var itemText = ""
+        var itemImage = ""
+        
+        if indexPath.section == 0 {
+            itemImage = iconSection0[indexPath.row]
+            itemText = menuSection0[indexPath.row]
+        
+        } else if indexPath.section == 1 {
+            itemImage = iconSection1[indexPath.row]
+            itemText = menuSection1[indexPath.row]
+            
+        } else {
+            itemImage = iconSection2[indexPath.row]
+            itemText = menuSection2[indexPath.row]
+        }
 
-        cell!.icon.image = UIImage(named: icon[index])
-        cell!.label.text = menu[index]
+        cell!.icon.image = UIImage(named: itemImage)
+        cell!.label.text = itemText
         
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       
-        if indexPath.section == 0 {
-            handleClickInFirstSection(onRow: indexPath.row)
-        } else if indexPath.section == 1 {
-            handleClickInSecondSection(onRow: indexPath.row)
-        }
-    }
-    
-    // MARK: Private functions
-    
-    // handle the click in the rows of the first section
-    private func handleClickInFirstSection(onRow row: Int) {
-        /** TODO **/
-    }
-    
-    // handle the click in the rows of the second section
-    private func handleClickInSecondSection(onRow row: Int) {
         
-        switch row {
+        var controller: UIViewController?
+        
+        switch indexPath.row {
             
-            case 0: /* Talk with US */
-                let url = NSURL(string: "mailto:mini@tlccampinas.com.br")
-                UIApplication.sharedApplication().openURL(url!)
+            case 0: /** Home - Picture chooser - Talk with Us **/
+                if indexPath.section == 0 {
+                    controller = loadedStoryboard!.instantiateViewControllerWithIdentifier("HomeViewController") as? HomeViewController
+                } else if indexPath.section == 1 {
+                    controller = loadedStoryboard!.instantiateViewControllerWithIdentifier("PictureChooserViewController") as? PictureChooserViewController
+                } else {
+                    let url = NSURL(string: "mailto:mini@tlccampinas.com.br")
+                    UIApplication.sharedApplication().openURL(url!)
+                }
+                break
+         
+            case 1:
                 break
             
             default:
                 // do nothing
                 break
         }
+        
+        delegate?.openViewController(controller)
     }
 }

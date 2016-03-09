@@ -14,9 +14,20 @@ protocol CenterViewControllerDelegate {
     func collapseSidePanels()
 }
 
-class CenterViewController: UIViewController {
+class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
     
     // MARK: Class attributes
+    
+    @IBOutlet weak var containerView: UIView!
+    
+    //var pictureChooserViewController: PictureChooserViewController?
+    
+    private var activeViewController: UIViewController? {
+        didSet {
+            removeInactiveViewController(oldValue)
+            updateActiveViewController()
+        }
+    }
     
     var delegate: CenterViewControllerDelegate?
     
@@ -24,5 +35,45 @@ class CenterViewController: UIViewController {
     
     @IBAction func menuTapped(sender: UIBarButtonItem) {
         delegate?.toggleSidePanel()
+    }
+    
+    // MARK: Side panel delegate
+    
+    func openViewController(controller: UIViewController?) {
+        
+        if controller != nil {
+            // set the desired view controller
+            activeViewController = controller
+            
+            // close the panel
+            delegate?.collapseSidePanels()
+        }
+    }
+    
+    // MARK: Private functions
+    
+    private func removeInactiveViewController(inactiveViewController: UIViewController?) {
+        if let inActiveVC = inactiveViewController {
+            // call before removing child view controller's view from hierarchy
+            inActiveVC.willMoveToParentViewController(nil)
+            
+            inActiveVC.view.removeFromSuperview()
+            
+            // call after removing child view controller's view from hierarchy
+            inActiveVC.removeFromParentViewController()
+        }
+    }
+    
+    private func updateActiveViewController() {
+        if let activeVC = activeViewController {
+            // call before adding child view controller's view as subview
+            addChildViewController(activeVC)
+            
+            activeVC.view.frame = containerView.bounds
+            containerView.addSubview(activeVC.view)
+            
+            // call before adding child view controller's view as subview
+            activeVC.didMoveToParentViewController(self)
+        }
     }
 }

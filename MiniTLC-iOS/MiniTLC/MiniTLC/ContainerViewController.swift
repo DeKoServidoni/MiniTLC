@@ -98,6 +98,7 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate {
         
         if sidePanelViewController == nil {
             sidePanelViewController = UIStoryboard.sideViewController()
+            sidePanelViewController?.delegate = centerViewController
             
             view.insertSubview(sidePanelViewController!.view, atIndex: 0)
             

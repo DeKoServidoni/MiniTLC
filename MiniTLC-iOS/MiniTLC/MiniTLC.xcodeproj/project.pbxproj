@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F7C1AB41C8FB96C004B1BED /* PictureChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C1AB31C8FB96C004B1BED /* PictureChooserViewController.swift */; };
+		3F7C1AB61C8FD15C004B1BED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C1AB51C8FD15C004B1BED /* HomeViewController.swift */; };
 		3FC92AFC1C8B35F300163E0F /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC92AFB1C8B35F300163E0F /* SlideMenuCell.swift */; };
 		3FC92AFF1C8B375100163E0F /* SlideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC92AFE1C8B375100163E0F /* SlideMenuCell.xib */; };
 		3FE5D8E61C867B6D00C23567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5D8E51C867B6D00C23567 /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F7C1AB31C8FB96C004B1BED /* PictureChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureChooserViewController.swift; sourceTree = "<group>"; };
+		3F7C1AB51C8FD15C004B1BED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3FC92AFB1C8B35F300163E0F /* SlideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuCell.swift; sourceTree = "<group>"; };
 		3FC92AFE1C8B375100163E0F /* SlideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideMenuCell.xib; sourceTree = "<group>"; };
 		3FE5D8E21C867B6D00C23567 /* MiniTLC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTLC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +87,8 @@
 				3FC92AFA1C8B35DB00163E0F /* Custom UI Components */,
 				3FE5D8FD1C867BB800C23567 /* SlideMenu Component */,
 				3FE5D8E51C867B6D00C23567 /* AppDelegate.swift */,
+				3F7C1AB51C8FD15C004B1BED /* HomeViewController.swift */,
+				3F7C1AB31C8FB96C004B1BED /* PictureChooserViewController.swift */,
 				3FC92AFD1C8B372C00163E0F /* Layout */,
 				3FE5D8EC1C867B6D00C23567 /* Assets.xcassets */,
 				3FE5D8F11C867B6D00C23567 /* Info.plist */,
@@ -174,9 +180,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC92AFC1C8B35F300163E0F /* SlideMenuCell.swift in Sources */,
+				3F7C1AB41C8FB96C004B1BED /* PictureChooserViewController.swift in Sources */,
 				3FE5D8FA1C867BA400C23567 /* CenterViewController.swift in Sources */,
 				3FE5D8FC1C867BA400C23567 /* SidePanelViewController.swift in Sources */,
 				3FE5D8FB1C867BA400C23567 /* ContainerViewController.swift in Sources */,
+				3F7C1AB61C8FD15C004B1BED /* HomeViewController.swift in Sources */,
 				3FE5D8E61C867B6D00C23567 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

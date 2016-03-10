@@ -20,7 +20,7 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
     
     @IBOutlet weak var containerView: UIView!
     
-    //var pictureChooserViewController: PictureChooserViewController?
+    var delegate: CenterViewControllerDelegate?
     
     private var activeViewController: UIViewController? {
         didSet {
@@ -29,7 +29,16 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
         }
     }
     
-    var delegate: CenterViewControllerDelegate?
+    // MARK: Lifecycle functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // load the default view controller (Home)
+        let loadedStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let controller = loadedStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as? HomeViewController
+        activeViewController = controller
+    }
     
     // MARK: Action functions
     

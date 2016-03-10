@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3F7C1AB41C8FB96C004B1BED /* PictureChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C1AB31C8FB96C004B1BED /* PictureChooserViewController.swift */; };
 		3F7C1AB61C8FD15C004B1BED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C1AB51C8FD15C004B1BED /* HomeViewController.swift */; };
+		3F892A5B1C90F8FE00E45E3A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F892A5A1C90F8FE00E45E3A /* Event.swift */; };
+		3F892A5D1C90F92100E45E3A /* document.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F892A5C1C90F92100E45E3A /* document.json */; };
+		3F892A5F1C90FF1C00E45E3A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F892A5E1C90FF1C00E45E3A /* HomeCell.swift */; };
+		3F892A611C90FF3F00E45E3A /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F892A601C90FF3F00E45E3A /* HomeCell.xib */; };
 		3FC92AFC1C8B35F300163E0F /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC92AFB1C8B35F300163E0F /* SlideMenuCell.swift */; };
 		3FC92AFF1C8B375100163E0F /* SlideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC92AFE1C8B375100163E0F /* SlideMenuCell.xib */; };
 		3FE5D8E61C867B6D00C23567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5D8E51C867B6D00C23567 /* AppDelegate.swift */; };
@@ -23,6 +27,10 @@
 /* Begin PBXFileReference section */
 		3F7C1AB31C8FB96C004B1BED /* PictureChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureChooserViewController.swift; sourceTree = "<group>"; };
 		3F7C1AB51C8FD15C004B1BED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F892A5A1C90F8FE00E45E3A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		3F892A5C1C90F92100E45E3A /* document.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document.json; sourceTree = "<group>"; };
+		3F892A5E1C90FF1C00E45E3A /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		3F892A601C90FF3F00E45E3A /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		3FC92AFB1C8B35F300163E0F /* SlideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuCell.swift; sourceTree = "<group>"; };
 		3FC92AFE1C8B375100163E0F /* SlideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideMenuCell.xib; sourceTree = "<group>"; };
 		3FE5D8E21C867B6D00C23567 /* MiniTLC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTLC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,10 +55,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F892A591C90F8EF00E45E3A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3F892A5A1C90F8FE00E45E3A /* Event.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		3FC92AFA1C8B35DB00163E0F /* Custom UI Components */ = {
 			isa = PBXGroup;
 			children = (
 				3FC92AFB1C8B35F300163E0F /* SlideMenuCell.swift */,
+				3F892A5E1C90FF1C00E45E3A /* HomeCell.swift */,
 			);
 			name = "Custom UI Components";
 			sourceTree = "<group>";
@@ -61,6 +78,7 @@
 				3FE5D8E91C867B6D00C23567 /* Main.storyboard */,
 				3FE5D8EE1C867B6D00C23567 /* LaunchScreen.storyboard */,
 				3FC92AFE1C8B375100163E0F /* SlideMenuCell.xib */,
+				3F892A601C90FF3F00E45E3A /* HomeCell.xib */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -84,6 +102,8 @@
 		3FE5D8E41C867B6D00C23567 /* MiniTLC */ = {
 			isa = PBXGroup;
 			children = (
+				3F892A5C1C90F92100E45E3A /* document.json */,
+				3F892A591C90F8EF00E45E3A /* Entities */,
 				3FC92AFA1C8B35DB00163E0F /* Custom UI Components */,
 				3FE5D8FD1C867BB800C23567 /* SlideMenu Component */,
 				3FE5D8E51C867B6D00C23567 /* AppDelegate.swift */,
@@ -166,8 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC92AFF1C8B375100163E0F /* SlideMenuCell.xib in Resources */,
+				3F892A5D1C90F92100E45E3A /* document.json in Resources */,
 				3FE5D8F01C867B6D00C23567 /* LaunchScreen.storyboard in Resources */,
 				3FE5D8ED1C867B6D00C23567 /* Assets.xcassets in Resources */,
+				3F892A611C90FF3F00E45E3A /* HomeCell.xib in Resources */,
 				3FE5D8EB1C867B6D00C23567 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,12 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F892A5B1C90F8FE00E45E3A /* Event.swift in Sources */,
 				3FC92AFC1C8B35F300163E0F /* SlideMenuCell.swift in Sources */,
 				3F7C1AB41C8FB96C004B1BED /* PictureChooserViewController.swift in Sources */,
 				3FE5D8FA1C867BA400C23567 /* CenterViewController.swift in Sources */,
 				3FE5D8FC1C867BA400C23567 /* SidePanelViewController.swift in Sources */,
 				3FE5D8FB1C867BA400C23567 /* ContainerViewController.swift in Sources */,
 				3F7C1AB61C8FD15C004B1BED /* HomeViewController.swift in Sources */,
+				3F892A5F1C90FF1C00E45E3A /* HomeCell.swift in Sources */,
 				3FE5D8E61C867B6D00C23567 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

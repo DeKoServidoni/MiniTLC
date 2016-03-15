@@ -46,13 +46,19 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
         delegate?.toggleSidePanel()
     }
     
-    // MARK: Side panel delegate
+    // MARK: Side panel delegate functions
     
-    func openViewController(controller: UIViewController?) {
+    func openViewController(controller: UIViewController!) {
         
         if controller != nil {
             // set the desired view controller
             activeViewController = controller
+            
+            if controller.isMemberOfClass(PictureChooserViewController) {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: UIBarButtonItemStyle.Plain, target: (controller as! PictureChooserViewController), action:"saveImage")
+            } else {
+                navigationItem.rightBarButtonItem = nil
+            }
             
             // close the panel
             delegate?.collapseSidePanels()

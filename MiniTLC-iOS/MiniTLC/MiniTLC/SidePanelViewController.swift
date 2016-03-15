@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol SidePanelViewControllerDelegate {
-    func openViewController(controller: UIViewController?)
+    func openViewController(controller: UIViewController!)
 }
 
 class SidePanelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -40,7 +40,6 @@ class SidePanelViewController: UIViewController, UITableViewDelegate, UITableVie
         
         loadedStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
     }
-
     
     // MARK: Table view delegate functions
     
@@ -99,20 +98,18 @@ class SidePanelViewController: UIViewController, UITableViewDelegate, UITableVie
         
         var controller: UIViewController?
         
-        switch indexPath.row {
+        switch indexPath.section {
             
-            case 0: /** Home - Picture chooser - Talk with Us **/
-                if indexPath.section == 0 {
-                    controller = loadedStoryboard!.instantiateViewControllerWithIdentifier("HomeViewController") as? HomeViewController
-                } else if indexPath.section == 1 {
-                    controller = loadedStoryboard!.instantiateViewControllerWithIdentifier("PictureChooserViewController") as? PictureChooserViewController
-                } else {
-                    let url = NSURL(string: "mailto:mini@tlccampinas.com.br")
-                    UIApplication.sharedApplication().openURL(url!)
-                }
+            case 0:
+                controller = selectItemFromSection0(indexPath.row)
                 break
-         
+            
             case 1:
+                controller = selectItemFromSection1(indexPath.row)
+                break
+            
+            case 2:
+                selectItemFromSection2(indexPath.row)
                 break
             
             default:
@@ -120,6 +117,65 @@ class SidePanelViewController: UIViewController, UITableViewDelegate, UITableVie
                 break
         }
         
-        delegate?.openViewController(controller)
+        if controller != nil {
+            delegate?.openViewController(controller)
+        }
     }
+    
+    // MARK: Private functions
+    
+    // Select the desired view from the first section
+    private func selectItemFromSection0(index: Int) -> UIViewController? {
+        
+        var controller: UIViewController?
+        
+        switch index {
+            
+            case 0: /** HOME **/
+                controller = loadedStoryboard!.instantiateViewControllerWithIdentifier("HomeViewController") as? HomeViewController
+                break
+            
+            default:
+                // do nothing
+                break
+        }
+        
+        return controller
+    }
+    
+    // Select the desired view from second section
+    private func selectItemFromSection1(index: Int) -> UIViewController? {
+        
+        var controller: UIViewController?
+        
+        switch index {
+            
+            case 0: /** PICTURE CHOOSER **/
+                controller = loadedStoryboard!.instantiateViewControllerWithIdentifier("PictureChooserViewController") as? PictureChooserViewController
+                break
+            
+            default:
+                // do nothing
+                break
+        }
+        
+        return controller
+    }
+    
+    // Select the desired view from the last section
+    private func selectItemFromSection2(index: Int) {
+        
+        switch index {
+            
+            case 0: /** TALK WITH US **/
+                let url = NSURL(string: "mailto:mini@tlccampinas.com.br")
+                UIApplication.sharedApplication().openURL(url!)
+                break
+            
+            default:
+                // do nothing
+                break
+        }
+    }
+
 }

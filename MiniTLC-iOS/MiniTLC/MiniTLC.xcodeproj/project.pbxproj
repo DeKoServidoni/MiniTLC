@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F27403E1C9791F80031DA5A /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F27403D1C9791F80031DA5A /* ImagePickerDelegate.swift */; };
 		3F7C1AB41C8FB96C004B1BED /* PictureChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C1AB31C8FB96C004B1BED /* PictureChooserViewController.swift */; };
 		3F7C1AB61C8FD15C004B1BED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C1AB51C8FD15C004B1BED /* HomeViewController.swift */; };
 		3F892A5B1C90F8FE00E45E3A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F892A5A1C90F8FE00E45E3A /* Event.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F27403D1C9791F80031DA5A /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 		3F7C1AB31C8FB96C004B1BED /* PictureChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureChooserViewController.swift; sourceTree = "<group>"; };
 		3F7C1AB51C8FD15C004B1BED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3F892A5A1C90F8FE00E45E3A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F27403C1C9791E10031DA5A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				3F27403D1C9791F80031DA5A /* ImagePickerDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
 		3F892A591C90F8EF00E45E3A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				3F892A5C1C90F92100E45E3A /* document.json */,
+				3F27403C1C9791E10031DA5A /* Delegates */,
 				3F892A591C90F8EF00E45E3A /* Entities */,
 				3FC92AFA1C8B35DB00163E0F /* Custom UI Components */,
 				3FE5D8FD1C867BB800C23567 /* SlideMenu Component */,
@@ -205,6 +216,7 @@
 				3FC92AFC1C8B35F300163E0F /* SlideMenuCell.swift in Sources */,
 				3F7C1AB41C8FB96C004B1BED /* PictureChooserViewController.swift in Sources */,
 				3FE5D8FA1C867BA400C23567 /* CenterViewController.swift in Sources */,
+				3F27403E1C9791F80031DA5A /* ImagePickerDelegate.swift in Sources */,
 				3FE5D8FC1C867BA400C23567 /* SidePanelViewController.swift in Sources */,
 				3FE5D8FB1C867BA400C23567 /* ContainerViewController.swift in Sources */,
 				3F7C1AB61C8FD15C004B1BED /* HomeViewController.swift in Sources */,

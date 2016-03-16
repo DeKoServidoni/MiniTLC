@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PictureChooserViewController: UIViewController {
+class PictureChooserViewController: UIViewController, ImagePickerProtocol {
     
     // MARK: Attributes
     
@@ -18,14 +18,24 @@ class PictureChooserViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
+    @IBOutlet weak var buttonHaroldinho: UIButton!
+    @IBOutlet weak var buttonLogo: UIButton!
+    @IBOutlet weak var buttonText: UIButton!
+    @IBOutlet weak var buttonContainer: UIVisualEffectView!
+    
     var imagePickerDelegate: ImagePickerDelegate!
+    var pictureManager: PictureManager!
     
     // MARK: Lifecycle functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imagePickerDelegate = ImagePickerDelegate(view: imageView)
+        // hide the masks bar
+        hideMasks(true)
+        
+        pictureManager = PictureManager(view: view)
+        imagePickerDelegate = ImagePickerDelegate(delegate: self)
         
         // necessary to verify if the device have or not the camera
         // functionality. If don't have we need to disable the button, otherwise we enable it.
@@ -53,6 +63,14 @@ class PictureChooserViewController: UIViewController {
         }
     }
     
+    // MARK: Image picker delegate functions
+    
+    // set the image when it has been selected
+    func onImageSelected(image: UIImage) {
+        imageView.image = image
+        hideMasks(false)
+    }
+    
     // MARK: Action functions
     
     // open the camera to take a picture
@@ -65,12 +83,36 @@ class PictureChooserViewController: UIViewController {
         openPicker(ofType: UIImagePickerControllerSourceType.PhotoLibrary)
     }
     
+    // insert the haroldinho mask
+    @IBAction func addHaroldinhoMask(sender: AnyObject) {
+        pictureManager.addMask(PictureManager.MaskType.MaskHaroldinho)
+    }
+    
+    // insert the minitlc logo mask
+    @IBAction func addLogoMask(sender: AnyObject) {
+        pictureManager.addMask(PictureManager.MaskType.MaskLogo)
+    }
+    
+    // insert the ballon text mask
+    @IBAction func addTextMask(sender: AnyObject) {
+        pictureManager.addMask(PictureManager.MaskType.MaskText)
+    }
+    
     // MARK: Private functions
+    
+    // hide or show the masks bar
+    private func hideMasks(hide: Bool) {
+        buttonHaroldinho.hidden = hide
+        buttonLogo.hidden = hide
+        buttonText.hidden = hide
+        buttonContainer.hidden = hide
+    }
     
     // generate the image
     private func generatePicture() -> UIImage {
         
         bottomToolbar.hidden = true
+        hideMasks(true)
         
         UIGraphicsBeginImageContext(view.frame.size)
         view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
@@ -81,6 +123,7 @@ class PictureChooserViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         bottomToolbar.hidden = false
+        hideMasks(false)
         
         return generatedImage
     }

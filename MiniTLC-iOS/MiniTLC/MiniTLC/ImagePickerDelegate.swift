@@ -9,17 +9,21 @@
 import Foundation
 import UIKit
 
+protocol ImagePickerProtocol {
+    func onImageSelected(image: UIImage)
+}
+
 class ImagePickerDelegate: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    let imageHolder: UIImageView!
+    var delegate: ImagePickerProtocol?
     
-    init(view: UIImageView!) {
-        imageHolder = view
+    init(delegate: ImagePickerProtocol?) {
+        self.delegate = delegate
     }
     
     // get the selected picture information
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        imageHolder.image = image
+        delegate?.onImageSelected(image)
         dismiss(picker)
     }
     

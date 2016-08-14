@@ -12,21 +12,21 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: fut-api
+  database: tlc-api
   pool: 5
   username: devuser
   password: devuser123
 
 development:
   <<: *default
-  database: fut-api
+  database: tlc-api
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: fut-api
+  database: tlc-api
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: fut-api_production
-  username: fut-api
-  password: <%= ENV['FUT-API_DATABASE_PASSWORD'] %>
+  database: tlc-api_production
+  username: tlc-api
+  password: <%= ENV['TLC-API_DATABASE_PASSWORD'] %>

@@ -6,13 +6,12 @@
 Aplicativo oficial do Mini TLC Campinas √
 <br><br>
 
-![Android]
-(Documents/Final Resources/android.png)
+**Android**
 <br>
-https://play.google.com/store/apps/details?id=com.dekoservidoni.minitlc
+[Download App](https://play.google.com/store/apps/details?id=com.dekoservidoni.minitlc)
 <br><br>
-
-![iOS]
-(Documents/Final Resources/ios.png)
+**iOS**
 <br>
-Em construção
+*Em construção*
+<br>
+[Download App]()

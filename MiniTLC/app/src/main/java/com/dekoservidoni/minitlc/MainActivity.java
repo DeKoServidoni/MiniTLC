@@ -4,19 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.dekoservidoni.minitlc.adapters.MiniListAdapter;
 import com.dekoservidoni.minitlc.dialogs.AboutDialog;
-import com.dekoservidoni.minitlc.managers.MiniDatabaseManager;
+import com.dekoservidoni.minitlc.entities.MiniEvent;
+import com.dekoservidoni.minitlc.managers.NetworkManager;
 import com.dekoservidoni.minitlc.utils.AppConstants;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,9 +38,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Bind(R.id.activity_main_navigation_view) NavigationView mNavigationView;
     @Bind(R.id.activity_main_toolbar) Toolbar mToolbar;
     @Bind(R.id.activity_main_list) ListView mList;
+    @Bind(R.id.activity_main_empty) TextView mEmpty;
 
     /** List adapter instance */
     private MiniListAdapter mAdapter = null;
+
+    /** Network manager */
+    private NetworkManager mManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mManager = new NetworkManager();
 
         // setup the toolbar
         setSupportActionBar(mToolbar);
@@ -80,8 +90,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onResume() {
         super.onResume();
 
-        MiniDatabaseManager manager = new MiniDatabaseManager(this);
-        mAdapter.setContent(manager.getAll());
+        if(mManager.isNetworkAvailable(this)) {
+            mManager.getEvents(this, new NetworkManager.NetworkCallback() {
+                @Override
+                public void onGetEventResponse(boolean success, List<MiniEvent> miniEvents) {
+
+                    if (success) {
+                        mAdapter.setContent(miniEvents);
+                        mEmpty.setVisibility(View.GONE);
+                        mList.setVisibility(View.VISIBLE);
+                    } else {
+                        mEmpty.setVisibility(View.VISIBLE);
+                        mList.setVisibility(View.GONE);
+                    }
+                }
+            });
+        }
     }
 
     @Override
@@ -119,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
 
-        mDrawerLayout.closeDrawer(Gravity.LEFT);
+        mDrawerLayout.closeDrawer(GravityCompat.START);
         item.setChecked(false);
 
         return true;
@@ -132,8 +156,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     @Override
     public void onBackPressed() {
-        if(mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
-            mDrawerLayout.closeDrawer(Gravity.LEFT);
+        if(mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+            mDrawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }

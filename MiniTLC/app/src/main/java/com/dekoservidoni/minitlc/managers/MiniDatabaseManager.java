@@ -65,7 +65,9 @@ public class MiniDatabaseManager {
             ContentValues values = new ContentValues();
             values.put(AppConstants.COLUMN_TITLE, event.getTitle());
             values.put(AppConstants.COLUMN_DESCRIPTION, event.getDescription());
-            values.put(AppConstants.COLUMN_DATE, event.getDate());
+            values.put(AppConstants.COLUMN_HOUR, event.getHour());
+            values.put(AppConstants.COLUMN_LOCAL, event.getLocal());
+            values.put(AppConstants.COLUMN_WHEN, event.getWhen());
 
             mDatabase.insert(AppConstants.TABLE_EVENTS, null, values);
         }
@@ -96,7 +98,9 @@ public class MiniDatabaseManager {
 
                     event.setTitle(cursor.getString(cursor.getColumnIndex(AppConstants.COLUMN_TITLE)));
                     event.setDescription(cursor.getString(cursor.getColumnIndex(AppConstants.COLUMN_DESCRIPTION)));
-                    event.setDate(cursor.getString(cursor.getColumnIndex(AppConstants.COLUMN_DATE)));
+                    event.setWhen(cursor.getString(cursor.getColumnIndex(AppConstants.COLUMN_WHEN)));
+                    event.setLocal(cursor.getString(cursor.getColumnIndex(AppConstants.COLUMN_LOCAL)));
+                    event.setHour(cursor.getString(cursor.getColumnIndex(AppConstants.COLUMN_HOUR)));
 
                     events.add(event);
 

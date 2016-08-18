@@ -156,10 +156,10 @@ public class NetworkTask extends AsyncTask<Void, Void, ServiceResponse> {
                 }
 
                 serviceResponse = new ServiceResponse();
-                serviceResponse.setSuccess(true);
+                serviceResponse.setSuccess(!content.isEmpty());
                 serviceResponse.setContent(content);
 
-                // insert into database TODO: not used yet!
+                // insert into database
                 //MiniDatabaseManager manager = new MiniDatabaseManager(mContext);
                 //manager.insertAll(content);
             }

@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.dekoservidoni.minitlc.adapters.MiniListAdapter;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Bind(R.id.activity_main_toolbar) Toolbar mToolbar;
     @Bind(R.id.activity_main_list) ListView mList;
     @Bind(R.id.activity_main_empty) TextView mEmpty;
+    @Bind(R.id.activity_main_progress) ProgressBar mProgress;
 
     /** List adapter instance */
     private MiniListAdapter mAdapter = null;
@@ -89,11 +91,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onResume() {
         super.onResume();
+        mProgress.setVisibility(View.VISIBLE);
+        mEmpty.setVisibility(View.GONE);
+        mList.setVisibility(View.GONE);
 
         if(mManager.isNetworkAvailable(this)) {
             mManager.getEvents(this, new NetworkManager.NetworkCallback() {
                 @Override
                 public void onGetEventResponse(boolean success, List<MiniEvent> miniEvents) {
+                    mProgress.setVisibility(View.GONE);
 
                     if (success) {
                         mAdapter.setContent(miniEvents);

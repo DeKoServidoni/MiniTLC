@@ -31,7 +31,6 @@ import butterknife.ButterKnife;
  *
  * Created by DeKoServidoni on 2/21/16.
  */
-@SuppressWarnings("deprecation")
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     /** UI Components */
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         };
 
-        mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
+        mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
     }
 

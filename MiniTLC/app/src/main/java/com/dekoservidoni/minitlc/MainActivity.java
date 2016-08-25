@@ -107,10 +107,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         mList.setVisibility(View.VISIBLE);
                     } else {
                         mEmpty.setVisibility(View.VISIBLE);
+                        mEmpty.setText(getString(R.string.empty_events));
                         mList.setVisibility(View.GONE);
                     }
                 }
             });
+        } else {
+            mEmpty.setVisibility(View.VISIBLE);
+            mEmpty.setText(getString(R.string.no_network));
+            mList.setVisibility(View.GONE);
         }
     }
 

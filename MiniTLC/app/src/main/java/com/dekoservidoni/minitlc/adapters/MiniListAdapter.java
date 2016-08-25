@@ -94,7 +94,7 @@ public class MiniListAdapter extends BaseAdapter {
         MiniEvent event = mContent.get(position);
 
         holder.title.setText(event.getTitle());
-        holder.date.setText(event.getDate());
+        holder.date.setText(event.getWhen());
 
         int visibility = event.getDescription().isEmpty() ? View.INVISIBLE : View.VISIBLE;
         holder.description.setText(event.getDescription());

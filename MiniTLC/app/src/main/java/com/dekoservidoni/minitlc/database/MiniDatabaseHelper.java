@@ -29,7 +29,9 @@ public class MiniDatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        // not used yet
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        if(oldVersion == 1 && newVersion == 2) {
+            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + AppConstants.TABLE_EVENTS);
+        }
     }
 }

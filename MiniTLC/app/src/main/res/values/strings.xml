@@ -20,4 +20,8 @@
     <string name="save_photo_success">Foto salva com sucesso!</string>
     <string name="save_photo_error">Não foi possível salvar a foto.</string>
 
+    <!-- Main activity strings -->
+    <string name="empty_events">Desculpe, mas ainda não temos nenhum evento! :(</string>
+    <string name="no_network">Desculpe, você está sem conexão com a internet! :(</string>
+
 </resources>

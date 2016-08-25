@@ -10,7 +10,9 @@ public class MiniEvent {
     /** Event information */
     private String mTitle = "";
     private String mDescription = "";
-    private String mDate = "";
+    private String mWhen = "";
+    private String mHour = "";
+    private String mLocal = "";
 
     /**
      * Set the event title
@@ -51,10 +53,10 @@ public class MiniEvent {
     /**
      * Set the event date
      *
-     * @param date string
+     * @param when string
      */
-    public void setDate(String date) {
-        mDate = date;
+    public void setWhen(String when) {
+        mWhen = when;
     }
 
     /**
@@ -62,7 +64,43 @@ public class MiniEvent {
      *
      * @return date string
      */
-    public String getDate() {
-        return mDate;
+    public String getWhen() {
+        return mWhen;
+    }
+
+    /**
+     * Set the event hour
+     *
+     * @param hour string
+     */
+    public void setHour(String hour) {
+        mHour = hour;
+    }
+
+    /**
+     * Get the event hour
+     *
+     * @return date string
+     */
+    public String getHour() {
+        return mHour;
+    }
+
+    /**
+     * Set the event local
+     *
+     * @param local string
+     */
+    public void setLocal(String local) {
+        mLocal = local;
+    }
+
+    /**
+     * Get the event local
+     *
+     * @return date string
+     */
+    public String getLocal() {
+        return mLocal;
     }
 }

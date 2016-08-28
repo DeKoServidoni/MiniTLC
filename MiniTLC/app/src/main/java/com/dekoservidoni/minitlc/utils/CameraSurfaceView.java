@@ -1,4 +1,4 @@
-package com.dekoservidoni.minitlc.customs;
+package com.dekoservidoni.minitlc.utils;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,9 +10,6 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
-
-import com.dekoservidoni.minitlc.utils.AppConstants;
-import com.dekoservidoni.minitlc.utils.MiniLog;
 
 import java.io.File;
 import java.io.FileNotFoundException;

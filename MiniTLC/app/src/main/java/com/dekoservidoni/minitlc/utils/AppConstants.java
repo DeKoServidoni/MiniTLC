@@ -39,13 +39,9 @@ public class AppConstants {
     public static final int REQUEST_OPEN_CAMERA = 1;
 
     /** Camera preview constants */
-    public static final String PICTURE_EXTENSION = ".jpeg";
-    public static final String PICTURE_NAME = "MiniTLC Photo";
-    public static final String PICTURE_MIME_TYPE = "image/jpeg";
-
-    /** Network service URLs */
-    private static final String SERVICE_VERSION = "v1";
-    public static final String URL_EVENTS_GET_ALL = "https://tlc-api.herokuapp.com/"+SERVICE_VERSION+"/events";
+    static final String PICTURE_EXTENSION = ".jpeg";
+    static final String PICTURE_NAME = "MiniTLC Photo";
+    static final String PICTURE_MIME_TYPE = "image/jpeg";
 
     /** JSON Tags */
     public static final String JSON_ARRAY_EVENTS = "events";

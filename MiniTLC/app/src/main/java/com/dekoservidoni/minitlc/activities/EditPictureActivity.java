@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.dekoservidoni.minitlc.R;
-import com.dekoservidoni.minitlc.customs.CameraSurfaceView;
+import com.dekoservidoni.minitlc.utils.CameraSurfaceView;
 import com.dekoservidoni.minitlc.utils.AppConstants;
 
 import butterknife.Bind;

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- theme colors -->
     <color name="colorPrimary">#F44336</color>
     <color name="colorPrimaryDark">#D32F2F</color>
-    <color name="colorAccent">#FFFFFF</color>
-    <color name="colorGradient">#F86D63</color>
+    <color name="colorAccent">@color/white</color>
+
     <!-- normal colors -->
     <color name="white">#FFFFFF</color>
+    <color name="card_button_container">#1A000000</color>
 </resources>

@@ -8,18 +8,15 @@ package com.dekoservidoni.minitlc.utils;
 public class AppConstants {
 
     /** Debug constants */
-    public static final String TAG = "MiniTLC";
-    public static final boolean DEBUG_ENABLE = true;
-
-    /** Splash screen timeout */
-    public static final int SPLASH_TIMEOUT = 3000;
+    static final String TAG = "MiniTLC";
+    static final boolean DEBUG_ENABLE = true;
 
     /** Database constants */
     public static final String DATABASE_NAME = "mini_tlc_database.db";
     public static final int DATABASE_VERSION = 2;
 
     public static final String TABLE_EVENTS = "mini_tlc_events";
-    public static final String COLUMN_ID = "event_id";
+    private static final String COLUMN_ID = "event_id";
     public static final String COLUMN_TITLE = "event_name";
     public static final String COLUMN_DESCRIPTION = "event_description";
     public static final String COLUMN_LOCAL = "event_local";
@@ -39,7 +36,6 @@ public class AppConstants {
     public static final String EXTRA_PICTURE_PATH = "extra_picture_path";
 
     /** Activity request codes */
-    public static final int REQUEST_OPEN_GALLERY = 1;
     public static final int REQUEST_OPEN_CAMERA = 1;
 
     /** Camera preview constants */
@@ -47,13 +43,8 @@ public class AppConstants {
     public static final String PICTURE_NAME = "MiniTLC Photo";
     public static final String PICTURE_MIME_TYPE = "image/jpeg";
 
-    /** Talk with us constants */
-    public static final String EMAIL_TYPE = "plain/text";
-    public static final String EMAIL_COORDINATION = "mini@tlccampinas.com.br";
-    public static final String EMAIL_CHOOSER_TITLE = "Enviar e-mail...";
-
     /** Network service URLs */
-    public static final String SERVICE_VERSION = "v1";
+    private static final String SERVICE_VERSION = "v1";
     public static final String URL_EVENTS_GET_ALL = "https://tlc-api.herokuapp.com/"+SERVICE_VERSION+"/events";
 
     /** JSON Tags */

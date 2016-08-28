@@ -1,4 +1,4 @@
-package com.dekoservidoni.minitlc;
+package com.dekoservidoni.minitlc.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.dekoservidoni.minitlc.R;
 import com.dekoservidoni.minitlc.customs.CameraSurfaceView;
 import com.dekoservidoni.minitlc.utils.AppConstants;
 
@@ -33,6 +36,10 @@ public class EditPictureActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_edit_picture);
         ButterKnife.bind(this);

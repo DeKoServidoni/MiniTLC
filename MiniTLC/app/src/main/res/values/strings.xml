@@ -3,7 +3,7 @@
 
     <!-- Navigation header strings -->
     <string name="nav_title">Olá, seja bem-vindo!</string>
-    <string name="nav_sub_title">Versão: 1.1</string>
+    <string name="nav_sub_title">Versão: 2.0</string>
 
     <!-- Navigation menu strings -->
     <string name="nav_calendar">Calendário</string>
@@ -20,8 +20,17 @@
     <string name="save_photo_success">Foto salva com sucesso!</string>
     <string name="save_photo_error">Não foi possível salvar a foto.</string>
 
-    <!-- Main activity strings -->
+    <!-- Home activity strings -->
+    <string name="tab_events">Eventos</string>
+    <string name="tab_profile">Meu Perfil</string>
+
+    <!-- List fragment strings -->
+    <string name="share_event">Compartilhar!</string>
     <string name="empty_events">Desculpe, mas ainda não temos nenhum evento! :(</string>
     <string name="no_network">Desculpe, você está sem conexão com a internet! :(</string>
+    <string name="test_title">Titulo</string>
+    <string name="test_locale">Local</string>
+    <string name="test_when">Quando</string>
+    <string name="test_desc">Descricao</string>
 
 </resources>

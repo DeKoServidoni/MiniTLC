@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:id="@+id/card_view_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/card_event_box"
+            layout="@layout/card_event_title"/>
+
+        <include
+            android:id="@+id/card_event_when_box"
+            layout="@layout/card_event_when"/>
+
+        <include
+            android:id="@+id/card_event_where_box"
+            layout="@layout/card_event_where"/>
+
+        <LinearLayout
+            android:id="@+id/card_share_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:background="@color/card_button_container">
+
+            <ImageView
+                android:id="@+id/card_view_facebook"
+                style="@style/CardIcon.Facebook"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/share_event"
+                android:gravity="center"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

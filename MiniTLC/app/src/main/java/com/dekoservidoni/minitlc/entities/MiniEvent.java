@@ -1,5 +1,8 @@
 package com.dekoservidoni.minitlc.entities;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+import com.google.firebase.database.PropertyName;
+
 /**
  * Class responsible to hold all the event information
  *
@@ -8,19 +11,40 @@ package com.dekoservidoni.minitlc.entities;
 public class MiniEvent {
 
     /** Event information */
+    @PropertyName("title")
     private String mTitle = "";
+    @PropertyName("description")
     private String mDescription = "";
+    @PropertyName("when")
     private String mWhen = "";
+    @PropertyName("hour")
     private String mHour = "";
+    @PropertyName("local")
     private String mLocal = "";
 
     /**
-     * Set the event title
-     *
-     * @param title string
+     * Constructor
      */
-    public void setTitle(String title) {
+    public MiniEvent() {
+        // Firebase:
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
+
+    /**
+     * Constructor
+     *
+     * @param title       of event
+     * @param description of event
+     * @param when        of event
+     * @param hour        of event
+     * @param local       of event
+     */
+    public MiniEvent(String title, String description, String when, String hour, String local) {
         mTitle = title;
+        mDescription = description;
+        mWhen = when;
+        mHour = hour;
+        mLocal = local;
     }
 
     /**
@@ -33,30 +57,12 @@ public class MiniEvent {
     }
 
     /**
-     * Set the event description
-     *
-     * @param description string
-     */
-    public void setDescription(String description) {
-        mDescription = description;
-    }
-
-    /**
      * Get the event description
      *
      * @return description string
      */
     public String getDescription() {
         return mDescription;
-    }
-
-    /**
-     * Set the event date
-     *
-     * @param when string
-     */
-    public void setWhen(String when) {
-        mWhen = when;
     }
 
     /**
@@ -69,30 +75,12 @@ public class MiniEvent {
     }
 
     /**
-     * Set the event hour
-     *
-     * @param hour string
-     */
-    public void setHour(String hour) {
-        mHour = hour;
-    }
-
-    /**
      * Get the event hour
      *
      * @return date string
      */
     public String getHour() {
         return mHour;
-    }
-
-    /**
-     * Set the event local
-     *
-     * @param local string
-     */
-    public void setLocal(String local) {
-        mLocal = local;
     }
 
     /**

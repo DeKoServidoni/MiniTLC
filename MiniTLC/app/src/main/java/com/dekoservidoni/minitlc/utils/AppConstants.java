@@ -11,26 +11,8 @@ public class AppConstants {
     static final String TAG = "MiniTLC";
     static final boolean DEBUG_ENABLE = true;
 
-    /** Database constants */
-    public static final String DATABASE_NAME = "mini_tlc_database.db";
-    public static final int DATABASE_VERSION = 2;
-
-    public static final String TABLE_EVENTS = "mini_tlc_events";
-    private static final String COLUMN_ID = "event_id";
-    public static final String COLUMN_TITLE = "event_name";
-    public static final String COLUMN_DESCRIPTION = "event_description";
-    public static final String COLUMN_LOCAL = "event_local";
-    public static final String COLUMN_WHEN = "event_when";
-    public static final String COLUMN_HOUR = "event_hour";
-
-    public static final String CREATE_TABLE_EVENTS = "create table "
-            + TABLE_EVENTS + "("
-            + COLUMN_ID + " integer primary key autoincrement, "
-            + COLUMN_TITLE + " text, "
-            + COLUMN_DESCRIPTION + " text, "
-            + COLUMN_LOCAL + " text, "
-            + COLUMN_WHEN + " text, "
-            + COLUMN_HOUR + " text);";
+    /** Firebase constants */
+    public static final String FIREBASE_TABLE_NAME = "mini_events";
 
     /** Bundle tags */
     public static final String EXTRA_PICTURE_PATH = "extra_picture_path";

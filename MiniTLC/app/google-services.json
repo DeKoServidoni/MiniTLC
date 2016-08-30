@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "203410758707",
+    "firebase_url": "https://minitlc-3e931.firebaseio.com",
+    "project_id": "minitlc-3e931",
+    "storage_bucket": "minitlc-3e931.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203410758707:android:7219ca8eda74a33f",
+        "android_client_info": {
+          "package_name": "com.dekoservidoni.minitlc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203410758707-hihho5472lvminq7d7k0t4947se3oqsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdN3Dbu0sLJ0x9LQuxCySc1SztkLLerPY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

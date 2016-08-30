@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == AppConstants.REQUEST_OPEN_CAMERA) {
+        if(requestCode == AppConstants.REQUEST_OPEN_CAMERA && resultCode == -1) {
             mListFragment.setPictureReturn();
         }
     }

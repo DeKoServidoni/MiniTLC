@@ -17,7 +17,7 @@ import java.util.List;
  *
  * Created by DeKoServidoni on 2/25/16.
  */
-public class MiniDatabaseManager {
+public class DatabaseManager {
 
     /** Database helper instance */
     private MiniDatabaseHelper mDatabaseHelper = null;
@@ -31,7 +31,7 @@ public class MiniDatabaseManager {
      * @param context
      *          Application context
      */
-    public MiniDatabaseManager(Context context) {
+    public DatabaseManager(Context context) {
         mDatabaseHelper = new MiniDatabaseHelper(context);
     }
 

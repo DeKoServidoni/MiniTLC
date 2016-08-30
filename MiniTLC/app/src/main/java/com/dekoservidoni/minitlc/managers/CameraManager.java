@@ -93,7 +93,7 @@ public class CameraManager {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
         String imageFileName = timeStamp + "_";
         File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        File image = new File(storageDir + imageFileName + "mini.jpg");
+        File image = new File(storageDir + "/" + imageFileName + "mini.jpg");
         boolean result = image.createNewFile();
 
         mGalleryPath = image.getAbsolutePath();

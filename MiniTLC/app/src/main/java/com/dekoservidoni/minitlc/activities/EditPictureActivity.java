@@ -1,20 +1,22 @@
 package com.dekoservidoni.minitlc.activities;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.dekoservidoni.minitlc.R;
-import com.dekoservidoni.minitlc.utils.CameraSurfaceView;
 import com.dekoservidoni.minitlc.utils.AppConstants;
+import com.dekoservidoni.minitlc.utils.CameraSurfaceView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,7 +26,7 @@ import butterknife.ButterKnife;
  *
  * Created by DeKoServidoni on 2/26/16.
  */
-public class EditPictureActivity extends AppCompatActivity {
+public class EditPictureActivity extends AppCompatActivity  {
 
     /** UI Components */
     @Bind(R.id.camera_preview) CameraSurfaceView mCameraPreview;
@@ -58,15 +60,17 @@ public class EditPictureActivity extends AppCompatActivity {
     private void setupUI() {
 
         Intent callerIntent = getIntent();
-        if(callerIntent != null) {
+        if (callerIntent != null) {
 
             Bundle bundle = callerIntent.getExtras();
-            if(bundle != null) {
+            if (bundle != null) {
                 String path = bundle.getString(AppConstants.EXTRA_PICTURE_PATH, "");
 
-                mCameraPreview.setBackground(Drawable.createFromPath(path));
-                mCameraPreview.setPicturePath(path.substring(0, path.lastIndexOf('/') + 1));
-                mCameraPreview.setVisibility(View.VISIBLE);
+                if (!TextUtils.isEmpty(path)) {
+                    mCameraPreview.setImageDrawable(Drawable.createFromPath(path));
+                    mCameraPreview.setPicturePath(path.substring(0, path.lastIndexOf('/') + 1));
+                    mCameraPreview.requestLayout();
+                }
             }
         }
     }

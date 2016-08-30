@@ -4,12 +4,13 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.provider.MediaStore;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.ImageView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,7 +23,7 @@ import java.util.Calendar;
  *
  * Created by DeKoServidoni on 2/26/16.
  */
-public class CameraSurfaceView extends SurfaceView implements OnTouchListener {
+public class CameraSurfaceView extends ImageView implements OnTouchListener {
 
     /** Mask component */
     private Bitmap mMaskBitmap;
